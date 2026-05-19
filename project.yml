@@ -21,3 +21,11 @@ targets:
         CODE_SIGN_STYLE: Manual
         DEVELOPMENT_TEAM: ""
         ENABLE_HARDENED_RUNTIME: NO
+    productName: SwiftUITextFieldDemo
+schemes:
+  SwiftUITextFieldDemo:
+    build:
+      targets:
+        SwiftUITextFieldDemo: all
+    run:
+      config: Debug

@@ -5,6 +5,7 @@ struct ContentView: View {
     @State private var text2 = ""
     @State private var text3 = ""
     @State private var secureText = ""
+    @FocusState private var isAutoFocused: Bool
 
     var body: some View {
         Form {
@@ -70,10 +71,13 @@ struct ContentView: View {
             // 6. 自动对焦
             Section("自动对焦") {
                 TextField("自动聚焦的输入框", text: $text1)
-                    .focused(true)
+                    .focused($isAutoFocused)
             }
         }
         .formStyle(.grouped)
         .padding()
+        .onAppear {
+            isAutoFocused = true
+        }
     }
 }
